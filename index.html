@@ -487,6 +487,134 @@ footer ul a:hover{color:#fff;}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1);}
 .reveal.in-view{opacity:1;transform:translateY(0);}
 
+/* Dark Overlay matching website background */
+.custom-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 15, 30, 0.75); /* Dark semi-transparent background */
+  backdrop-filter: blur(4px); /* Blurs page behind popup */
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Popup Box */
+.custom-alert-box {
+  background: #ffffff; /* Modal background */
+  padding: 24px 30px;
+  border-radius: 12px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.25s ease-out;
+}
+
+.custom-alert-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.custom-alert-box h4 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #1a1a1a;
+}
+
+.custom-alert-box p {
+  margin: 0 0 20px 0;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.4;
+}
+
+.custom-alert-btn {
+  background-color: #0d6efd; /* Primary website accent color */
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.custom-alert-btn:hover {
+  background-color: #0b5ed7;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+} 
+
+/* Popup Background Overlay */
+    .popup-overlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+
+    /* Modal Content Box */
+    .popup-content {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Image Styling */
+    .popup-content img {
+      width: 100%;
+      height: auto;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background-color: #ffffff;
+      color: #333333;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      user-select: none;
+    }
+
+    .close-btn:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.1);
+    } 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:980px){
   .hero-grid{grid-template-columns:1fr;}
@@ -664,7 +792,7 @@ footer ul a:hover{color:#fff;}
       <div class="ceo-photo-wrap">
         <div class="ceo-photo">
           <!-- Replace src below with the real photo of Abhishek Sah, e.g. "images/abhishek-sah.jpg" -->
-          <img src="a.jpeg" alt="Abhishek Sah, CEO of A&A Tax & Accounting Services" onerror="this.style.display='none'; this.parentElement.querySelector('.initials').style.display='flex';">
+          <img src="abhishek.jpeg" alt="Abhishek Sah, CEO of A&A Tax & Accounting Services" onerror="this.style.display='none'; this.parentElement.querySelector('.initials').style.display='flex';">
           <span class="initials" style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">AS</span>
         </div>
         <div class="ceo-name">Abhishek Sah</div>
@@ -684,14 +812,14 @@ footer ul a:hover{color:#fff;}
     <div class="section-head reveal">
       <div class="eyebrow">What we do</div>
       <h2>Our services</h2>
-      <p>From daily bookkeeping to full-scale audits, we handle the numbers so you can focus on running your business.</p>
+      <p>From daily bookkeeping to full scale audits, we handle the numbers so you can focus on running your business.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <span class="s-index">01</span>
         <div class="s-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M9 16h6M9 8h2"/><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
         <h3>VAT &amp; Tax Services</h3>
-        <p>Ensure full compliance while saving more — accurate VAT returns and tax planning tailored to your business.</p>
+        <p>Ensure full compliance while saving more accurate VAT returns and tax planning tailored to your business.</p>
       </div>
       <div class="service-card reveal">
         <span class="s-index">02</span>
@@ -703,25 +831,25 @@ footer ul a:hover{color:#fff;}
         <span class="s-index">03</span>
         <div class="s-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/><path d="m8 16 2 2 4-4"/></svg></div>
         <h3>OCR Services</h3>
-        <p>Fast, automated document capture for timely filing and reduced penalties — no more manual data entry.</p>
+        <p>Fast, automated document capture for timely filing and reduced penalties no more manual data entry.</p>
       </div>
       <div class="service-card reveal">
         <span class="s-index">04</span>
         <div class="s-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
         <h3>Accounting &amp; Bookkeeping</h3>
-        <p>Accurate records built for better decisions — clean books maintained on a schedule you can rely on.</p>
+        <p>Accurate records built for better decisions clean books maintained on a schedule you can rely on.</p>
       </div>
       <div class="service-card reveal">
         <span class="s-index">05</span>
         <div class="s-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
         <h3>Outsourcing Services</h3>
-        <p>Efficient back-office support so your team can focus entirely on growth, not paperwork.</p>
+        <p>Efficient back office support so your team can focus entirely on growth, not paperwork.</p>
       </div>
       <div class="service-card reveal">
         <span class="s-index">06</span>
         <div class="s-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <h3>Advisory &amp; Consultation</h3>
-        <p>Strategic guidance to plan ahead — from cash flow to compliance calendars, we help you decide with confidence.</p>
+        <p>Strategic guidance to plan ahead from cash flow to compliance calendars, we help you decide with confidence.</p>
       </div>
     </div>
   </div>
@@ -769,8 +897,8 @@ footer ul a:hover{color:#fff;}
     <div class="about-copy reveal">
       <div class="eyebrow">Why choose A&amp;A</div>
       <h2>Confidential, secure and always accurate.</h2>
-      <p>We provide smart accounting, tax and advisory solutions to help your business grow with confidence. Every engagement — from a single VAT return to a full audit — is handled with the same discipline and attention to detail.</p>
-      <p>Your data stays protected, your filings stay on time, and your numbers stay accurate — so you can make decisions with clarity.</p>
+      <p>We provide smart accounting, tax and advisory solutions to help your business grow with confidence. Every engagement from a single VAT return to a full audit is handled with the same discipline and attention to detail.</p>
+      <p>Your data stays protected, your filings stay on time, and your numbers stay accurate so you can make decisions with clarity.</p>
       <ul class="checklist">
         <li><span class="c-mark">✓</span> Confidential &amp; secure handling of your financial data</li>
         <li><span class="c-mark">✓</span> Transparent pricing with no hidden charges</li>
@@ -789,14 +917,14 @@ footer ul a:hover{color:#fff;}
     <div class="section-head reveal">
       <div class="eyebrow">Get in touch</div>
       <h2>Let's grow together</h2>
-      <p>Have a question about VAT, an upcoming audit, or your books? Reach us directly — we usually reply within minutes on WhatsApp.</p>
+      <p>Have a question about VAT, an upcoming audit, or your books? Reach us directly we usually reply within minutes on WhatsApp.</p>
     </div>
 
     <div class="contact-wrap reveal">
       <div class="contact-card whatsapp">
         <div class="c-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.14h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.22-8.24 8.22z"/></svg></div>
         <h3>Message us on WhatsApp</h3>
-        <p>The fastest way to reach us. Send your query, an invoice, or a document — we'll respond quickly.</p>
+        <p>The fastest way to reach us. Send your query, an invoice, or a document we'll respond quickly.</p>
         <a href="https://wa.me/9779811317673" target="_blank" rel="noopener" class="cbtn">Start chat →</a>
       </div>
 
@@ -805,8 +933,8 @@ footer ul a:hover{color:#fff;}
         <h3>Call our office</h3>
         <p>Prefer to talk? Call us directly during business hours for consultations and support.</p>
         <div class="numbers-list">
-          <a href="tel:+9779811317673">+977 981 131 7673</a>
-          <a href="tel:+9779764455746">+977 976 445 5746</a>
+          <a href="tel:+9779811317673">+977 9811317673</a>
+          <a href="tel:+9779764455746">+977 9764455746</a>
         </div>
       </div>
     </div>
@@ -815,23 +943,27 @@ footer ul a:hover{color:#fff;}
       <div class="location-info">
         <div class="c-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <h3>Visit our office</h3>
-        <p>Stop by for an in-person consultation — we're happy to walk through your books or tax questions face to face.</p>
+        <p>Stop by for an in-person consultation we're happy to walk through your books or tax questions face to face.</p>
         <p class="addr">Itahari-10, Sunsari<br>Koshi Province, Nepal</p>
       </div>
       <div class="map-embed">
-       <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d274.24451119288705!2d87.27653470800404!3d26.646905104380284!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1785865796554!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-    </div>
+       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d274.24440729232924!2d87.2765690220901!3d26.646948364009102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6de2f05f034b%3A0xce9642126f525752!2sA%26A%20Tax%20and%20Accounting%20Services!5e1!3m2!1sen!2snp!4v1785875044892!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
   </div>
 </section>
 
 <!-- QUOTE FORM -->
+ 
 <section class="section" id="quote" style="padding-top:0;">
   <div class="wrap">
     <div class="form-card reveal">
       <h3>Request a free consultation</h3>
-      <p>Tell us a little about what you need — we'll get back to you on WhatsApp or by phone.</p>
-      <form id="contactForm">
+      <p>Tell us a little about what you need we'll get back to you on WhatsApp or by phone.</p>
+
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="5c54b842-b16c-4571-a202-112efe063688">
+        <input type="hidden" name="subject" value="New message from your Website">
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
         <div class="f-row">
           <div class="field">
             <label for="fname">Full name</label>
@@ -839,37 +971,49 @@ footer ul a:hover{color:#fff;}
           </div>
           <div class="field">
             <label for="fphone">Phone / WhatsApp number</label>
-            <input type="tel" id="fphone" name="fphone" placeholder="+977 ..." required>
+            <input type="tel" id="fphone" name="fphone" placeholder="10-digit phone number (e.g. 98.......)" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);" required>
           </div>
         </div>
+
         <div class="f-row">
           <div class="field full">
             <label for="fservice">Service needed</label>
             <select id="fservice" name="fservice">
-              <option>VAT &amp; Tax Services</option>
-              <option>Assist in Auditing</option>
-              <option>OCR Services</option>
-              <option>Accounting &amp; Bookkeeping</option>
-              <option>Outsourcing Services</option>
-              <option>Advisory &amp; Consultation</option>
-              <option>Something else</option>
+              <option value="VAT & Tax Services">VAT &amp; Tax Services</option>
+              <option value="Assist in Auditing">Assist in Auditing</option>
+              <option value="OCR Services">OCR Services</option>
+              <option value="Accounting & Bookkeeping">Accounting &amp; Bookkeeping</option>
+              <option value="Outsourcing Services">Outsourcing Services</option>
+              <option value="Advisory & Consultation">Advisory &amp; Consultation</option>
+              <option value="Something else">Something else</option>
             </select>
           </div>
         </div>
+
         <div class="f-row">
           <div class="field full">
             <label for="fmsg">Your message</label>
             <textarea id="fmsg" name="fmsg" placeholder="Briefly describe your issue or question..." required></textarea>
           </div>
         </div>
+
         <div class="submit-row">
           <button type="submit" class="btn btn-primary">Send message</button>
           <span class="form-note">Or skip the form and message us directly on WhatsApp above.</span>
         </div>
-        <div class="form-success" id="formSuccess">✓ Thanks! We've noted your message — we'll reach out shortly.</div>
+
+        <div class="form-success" id="formSuccess">✓ Thanks! We've noted your message we'll reach out shortly.</div>
       </form>
     </div>
   </div>
+  <div id="customAlertModal" class="custom-alert-overlay" style="display: none;">
+  <div class="custom-alert-box">
+    <div class="custom-alert-icon">⏳</div>
+    <h4 id="customAlertTitle">Please Wait</h4>
+    <p id="customAlertMessage">Please wait 21 second(s) before submitting again.</p>
+    <button type="button" class="custom-alert-btn" onclick="closeCustomAlert()">Got it</button>
+  </div>
+</div>
 </section>
 
 <footer>
@@ -905,8 +1049,8 @@ footer ul a:hover{color:#fff;}
       <div>
         <h5>Contact</h5>
         <ul>
-          <li><a href="tel:+9779811317673">+977 981 131 7673</a></li>
-          <li><a href="tel:+9779764455746">+977 976 445 5746</a></li>
+          <li><a href="tel:+9779811317673">+977 981317673</a></li>
+          <li><a href="tel:+9779764455746">+977 9764455746</a></li>
           <li><a href="https://wa.me/9779811317673" target="_blank" rel="noopener">WhatsApp us</a></li>
           <li><a href="#contact">Itahari-10, Sunsari</a></li>
         </ul>
@@ -928,13 +1072,13 @@ footer ul a:hover{color:#fff;}
   <div class="consult-modal">
     <button class="modal-close" id="consultClose" aria-label="Close">&times;</button>
     <h3>Free consultation</h3>
-    <p>Choose how you'd like to reach us — we typically reply within minutes.</p>
+    <p>Choose how you'd like to reach us we typically reply within minutes.</p>
     <div class="consult-options">
       <a href="https://wa.me/9779811317673?text=Hi%20A%26A%20Tax%20%26%20Accounting%2C%20I%27d%20like%20a%20free%20consultation." target="_blank" rel="noopener" class="consult-opt wa">
         <div class="co-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.14h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.22-8.24 8.22z"/></svg></div>
         <div class="co-text">
           <div class="co-title">Chat on WhatsApp</div>
-          <div class="co-sub">+977 981 131 7673 · usually replies in minutes</div>
+          <div class="co-sub">+977 9811317673 · usually replies in minutes</div>
         </div>
         <span class="co-arrow">→</span>
       </a>
@@ -942,7 +1086,7 @@ footer ul a:hover{color:#fff;}
         <div class="co-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <div class="co-text">
           <div class="co-title">Call us</div>
-          <div class="co-sub">+977 981 131 7673 / +977 976 445 5746</div>
+          <div class="co-sub">+977 9811317673 / +977 9764455746</div>
         </div>
         <span class="co-arrow">→</span>
       </a>
@@ -950,7 +1094,34 @@ footer ul a:hover{color:#fff;}
   </div>
 </div>
 
+<!-- Popup Overlay HTML -->
+  <div id="imagePopup" class="popup-overlay" onclick="closeOnBackgroundClick(event)">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <img src="popup.jpg" alt="A&A Tax and Accounting Services Notice">
+    </div>
+  </div>
 <script>
+    function showPopup() {
+      document.getElementById("imagePopup").style.display = "flex";
+    }
+
+    // Close Popup
+    function closePopup() {
+      document.getElementById("imagePopup").style.display = "none";
+    }
+
+    // Close when clicking dark area outside the photo
+    function closeOnBackgroundClick(event) {
+      if (event.target.id === "imagePopup") {
+        closePopup();
+      }
+    }
+
+    // Automatically trigger popup after 500ms delay on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(showPopup, 500);
+    });
 // Header scroll state
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
@@ -986,22 +1157,78 @@ document.querySelectorAll('.service-card').forEach((card, i) => {
   card.style.transitionDelay = (i * 70) + 'ms';
 });
 
-// Contact form (client-side demo — no backend)
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
-form.addEventListener('submit', function(e){
+
+// Modal Helper Functions
+function showCustomAlert(message) {
+  document.getElementById('customAlertMessage').innerText = message;
+  document.getElementById('customAlertModal').style.display = 'flex';
+}
+
+function closeCustomAlert() {
+  document.getElementById('customAlertModal').style.display = 'none';
+}
+
+form.addEventListener('submit', function(e) {
   e.preventDefault();
+
+  // 1. Rate Limit Check (60 seconds)
+  const COOLDOWN_TIME = 30 * 1000; 
+  const lastSubmit = localStorage.getItem('lastFormSubmit');
+  const now = Date.now();
+
+  if (lastSubmit && (now - lastSubmit) < COOLDOWN_TIME) {
+    const remainingSeconds = Math.ceil((COOLDOWN_TIME - (now - lastSubmit)) / 1000);
+    
+    // Shows your custom website popup modal
+    showCustomAlert(`Please wait ${remainingSeconds} second(s) before submitting again.`);
+    return;
+  }
+
+  // 2. Gather field values
   const name = document.getElementById('fname').value.trim();
   const phone = document.getElementById('fphone').value.trim();
   const service = document.getElementById('fservice').value;
   const msg = document.getElementById('fmsg').value.trim();
-  success.classList.add('show');
-  form.reset();
-  // Optional: also open WhatsApp pre-filled with the message
-  const waText = encodeURIComponent(`Hi A&A Tax & Accounting, my name is ${name}. I'm interested in: ${service}. ${msg}`);
-  success.innerHTML = `✓ Thanks ${name || ''}! We've noted your message. <a href="https://wa.me/9779811317673?text=${waText}" target="_blank" rel="noopener" style="text-decoration:underline;color:#1B9E5A;font-weight:700;margin-left:4px;">Send it on WhatsApp too →</a>`;
-});
 
+  // 3. 10-Digit Mobile Validation
+ // Validates: Starts with 97 or 98 AND total length is exactly 10 digits
+const phoneRegex = /^(97|98)\d{8}$/;
+
+if (!phoneRegex.test(phone)) {
+  showCustomAlert("Please enter a valid 10-digit mobile number starting with 97 or 98.");
+  document.getElementById('fphone').focus();
+  return;
+}
+
+  // 4. Send to Web3Forms
+  const formData = new FormData(form);
+
+  fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  })
+  .then(async (response) => {
+    let json = await response.json();
+
+    if (response.status === 200) {
+      localStorage.setItem('lastFormSubmit', Date.now());
+
+      const waText = encodeURIComponent(`Hi A&A Tax & Accounting, my name is ${name}. I'm interested in: ${service}. My message is "${msg}"`);
+      
+      success.innerHTML = `✓ Thanks ${name || ''}! We've noted your message. <a href="https://wa.me/9779811317673?text=${waText}" target="_blank" rel="noopener" style="text-decoration:underline;color:#1B9E5A;font-weight:700;margin-left:4px;">Send it on WhatsApp too →</a>`;
+      success.classList.add('show');
+      
+      form.reset();
+    } else {
+      showCustomAlert(json.message || "Form submission failed. Please try again.");
+    }
+  })
+  .catch(error => {
+    showCustomAlert("Unable to send message right now. Please try again.");
+  });
+});
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
