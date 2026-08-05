@@ -73,6 +73,22 @@ nav{
   font-size:1.25rem;letter-spacing:0.02em;
   box-shadow:0 8px 18px -8px rgba(11,79,138,0.6);
 }
+.brand-mark-crop {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-logo {
+  height: 40px;          /* Adjust height to match your header */
+  width: 40px;           /* Keep width equal to height for a perfect circle */
+  border-radius: 50%;    /* Clips the image into a circle */
+  object-fit: cover;     /* Prevents image stretching */
+  display: block;
+}
 .brand-text{font-family:'Barlow Condensed',sans-serif;font-weight:700;line-height:1.05;}
 .brand-text .b1{font-size:1rem;letter-spacing:0.04em;color:var(--navy-deep);text-transform:uppercase;}
 .brand-text .b2{font-size:0.66rem;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;}
@@ -419,6 +435,13 @@ footer ul a:hover{color:#fff;}
 .foot-strip{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.16em;color:#5F87A3;text-transform:uppercase;}
 .social-row{
   display:flex;gap:10px;margin-top:14px;
+}
+.footer-logo {
+  height: 40px;
+  width: auto;
+  border-radius: 8px;
+  display: block;
+  cursor: default;
 }
 .social-row a{
   width:38px;height:38px;border-radius:10px;
