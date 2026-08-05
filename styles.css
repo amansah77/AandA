@@ -83,8 +83,8 @@ nav{
   justify-content: center;
 }
 .brand-logo {
-  height: 40px;          /* Adjust height to match your header */
-  width: 40px;           /* Keep width equal to height for a perfect circle */
+  height: 100%;          /* Adjust height to match your header */
+  width: 100%;           /* Keep width equal to height for a perfect circle */
   border-radius: 50%;    /* Clips the image into a circle */
   object-fit: cover;     /* Prevents image stretching */
   display: block;
